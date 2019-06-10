@@ -35,6 +35,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.substractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multipleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.divideToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.divRadioButton4 = new System.Windows.Forms.RadioButton();
             this.multRadioButton3 = new System.Windows.Forms.RadioButton();
             this.subRadioButton2 = new System.Windows.Forms.RadioButton();
@@ -58,16 +63,11 @@
             this.dIvideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.substractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.multipleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.divideToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -88,6 +88,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(69, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox1
             // 
@@ -95,6 +96,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(75, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label2
             // 
@@ -116,6 +119,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.ContextMenuStrip = this.contextMenuStrip1;
             this.groupBox2.Controls.Add(this.divRadioButton4);
             this.groupBox2.Controls.Add(this.multRadioButton3);
             this.groupBox2.Controls.Add(this.subRadioButton2);
@@ -126,6 +130,42 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Operation";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem1,
+            this.substractToolStripMenuItem,
+            this.multipleToolStripMenuItem,
+            this.divideToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(124, 92);
+            // 
+            // addToolStripMenuItem1
+            // 
+            this.addToolStripMenuItem1.Checked = true;
+            this.addToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.addToolStripMenuItem1.Text = "Add";
+            // 
+            // substractToolStripMenuItem
+            // 
+            this.substractToolStripMenuItem.Name = "substractToolStripMenuItem";
+            this.substractToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.substractToolStripMenuItem.Text = "Substract";
+            // 
+            // multipleToolStripMenuItem
+            // 
+            this.multipleToolStripMenuItem.Name = "multipleToolStripMenuItem";
+            this.multipleToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.multipleToolStripMenuItem.Text = "Multiple";
+            // 
+            // divideToolStripMenuItem1
+            // 
+            this.divideToolStripMenuItem1.Name = "divideToolStripMenuItem1";
+            this.divideToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.divideToolStripMenuItem1.Text = "Divide";
             // 
             // divRadioButton4
             // 
@@ -205,6 +245,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -252,31 +293,31 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // calculateToolStripMenuItem
             // 
             this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
-            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.calculateToolStripMenuItem.Text = "Calculate";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(135, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(135, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // operationToolStripMenuItem
             // 
@@ -294,25 +335,25 @@
             this.addToolStripMenuItem.Checked = true;
             this.addToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // subToolStripMenuItem
             // 
             this.subToolStripMenuItem.Name = "subToolStripMenuItem";
-            this.subToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.subToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.subToolStripMenuItem.Text = "Subtract";
             // 
             // multiplyToolStripMenuItem
             // 
             this.multiplyToolStripMenuItem.Name = "multiplyToolStripMenuItem";
-            this.multiplyToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.multiplyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.multiplyToolStripMenuItem.Text = "Multiply";
             // 
             // dIvideToolStripMenuItem
             // 
             this.dIvideToolStripMenuItem.Name = "dIvideToolStripMenuItem";
-            this.dIvideToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.dIvideToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dIvideToolStripMenuItem.Text = "DIvide";
             this.dIvideToolStripMenuItem.Click += new System.EventHandler(this.dIvideToolStripMenuItem_Click);
             // 
@@ -331,42 +372,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem1,
-            this.substractToolStripMenuItem,
-            this.multipleToolStripMenuItem,
-            this.divideToolStripMenuItem1});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
-            // 
-            // addToolStripMenuItem1
-            // 
-            this.addToolStripMenuItem1.Checked = true;
-            this.addToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.addToolStripMenuItem1.Text = "Add";
-            // 
-            // substractToolStripMenuItem
-            // 
-            this.substractToolStripMenuItem.Name = "substractToolStripMenuItem";
-            this.substractToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.substractToolStripMenuItem.Text = "Substract";
-            // 
-            // multipleToolStripMenuItem
-            // 
-            this.multipleToolStripMenuItem.Name = "multipleToolStripMenuItem";
-            this.multipleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.multipleToolStripMenuItem.Text = "Multiple";
-            // 
-            // divideToolStripMenuItem1
-            // 
-            this.divideToolStripMenuItem1.Name = "divideToolStripMenuItem1";
-            this.divideToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.divideToolStripMenuItem1.Text = "Divide";
             // 
             // Form1
             // 
@@ -388,10 +393,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
